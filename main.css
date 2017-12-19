@@ -1,0 +1,79 @@
+body {
+  font-size: 0; }
+
+.general {
+  width: 100%;
+  height: 100vh; }
+
+.bouddha {
+  margin-left: 40%;
+  margin-top: 110%;
+  width: 50px;
+  height: 80x; }
+
+p {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: black;
+  margin: 0 15px;
+  width: 80px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.contenair1 {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20%;
+  height: 90vh; }
+
+.contenair2 {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 80%;
+  height: 90vh; }
+
+.Day {
+  line-height: 100px;
+  margin-top: 250px;
+  width: 100%;
+  height: 100px; }
+
+.Week {
+  line-height: 100px;
+  width: 100%;
+  height: 100px; }
+
+.Month {
+  line-height: 100px;
+  width: 100%;
+  height: 100px; }
+
+.autre {
+  width: 100%;
+  height: 100px; }
+
+.ajout {
+  font-size: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #d8d8d8; }
+
+.ajout1 {
+  vertical-align: middle;
+  border-radius: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #d8d8d8; }
+
+.ajout2 {
+  vertical-align: middle;
+  border-radius: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #d8d8d8; }
