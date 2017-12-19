@@ -43,19 +43,58 @@ var AppSecret='371758459896094a60e6c3b878aa947a';
 	};
 
 */
-//// Création du tableau de logos à rendre invisible  ////////////////////
+//recuperer App ID et App Secret
+
+var valeurId="";
+var valeurSecret="";
+       
+    $("#save").click(function(){
+        var valeurId = $("#appId").val();
+    	console.log(valeurId);
+
+    	var valeurSecret = $("#appSecret").val();
+    	console.log(valeurSecret);
+
+	    localStorage.setItem("valeurId", valeurId);
+	    localStorage.setItem("valeurSecret", valeurSecret);
+	    //console.log(valeurId +", "+ valeurSecret);
+	    //getPictures();
+    });
+
+//// Création du tableau de logos à rendre invisible Add a Site ////////////////////
+	
+/*	$("#ajouter").click( function(){
+		var url = $("#urlSite").val();
+		localStorage.setItem("urlSite", url);
+	});
+*/
+
+
+
+	$("#nomSite").focusout(ajouterPicture)
+	function ajouterPicture(){
+		var query = $("#nomSite").val();
+		console.log('query='+ query);
+		localStorage.setItem("nomSite", query);
+		getPictures();
+	}
+
+
 
 function getPictures(query, AppId, AppSecret){
-var query="lemonde";
-var AppId='437660773298889';
-var AppSecret='371758459896094a60e6c3b878aa947a';
+	 query=localStorage.getItem('nomSite');
+	//var AppId='437660773298889';
+	AppId=localStorage.getItem('valeurId');
+	console.log(valeurId);
+	//var AppSecret='371758459896094a60e6c3b878aa947a';// 
+	AppSecret = localStorage.getItem('valeurSecret');
 	// remplacer lemonde par '+query+''
 	$.getJSON('https://graph.facebook.com/search?q='+query+'&type=page&access_token='+AppId+'|'+AppSecret+'',function(monJSON){
 		var length = monJSON.data.length;
 		console.log(monJSON.data);
-		for(var i=0;i<length;i++){
+		for(var i=0;i<15;i++){
 			var pageid = monJSON.data[i].id;
-			$('body').append('<img src="https://graph.facebook.com/'+pageid+'/picture/?width=30">');
+			$('.choixLogos').append('<img id="page-'+i+'" src="https://graph.facebook.com/'+pageid+'/picture/?width=50">');
 		}
 		// création du logo central qui doit apparaitre en quittant le focus sur champ nom
 		var pageid = monJSON.data[0].id;
@@ -64,8 +103,17 @@ var AppSecret='371758459896094a60e6c3b878aa947a';
 	});
 }
 
+ $(".choixLogos").click(function(a){
+ 	if(a.target.id.indexOf("page-") != -1){
+ 	console.log(a.target.id); 	
+ 	var urlPict=a.target.src;
+ 	console.log(a.target.src);
+	$('#logo').attr('src',urlPict);
+ 	}
+ });
+
 //// Déclenche la création du tableau de logos ///////////
-getPictures();
+
 
 //// Action More Images : rendre le tableau de logo visible avec glissement ///////////
 function moreImages(){
