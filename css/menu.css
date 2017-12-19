@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+body{
+    font-family: 'Roboto';
+    color:#333;
+    font-size:13px;
+    height:900px;
+}
+h1{
+    font-family: 'Roboto';
+    font-size:20px;
+    line-height:40px;
+    font-weight:100;
+}
+.menuCta{
+    position: relative;
+    box-sizing: border-box;
+    left:50px;
+    top:40vh;
+    width: 240px;
+    margin:0;
+    background-color: #dddddd;
+    text-align:center;
+    border-radius:3px;
+}
+.menuOpen{
+    position: relative;
+    box-sizing: border-box;
+    left:50px;
+    top:40vh;
+    width: 240px;
+    margin:0;
+    background-color:rgb(218,219,218);
+    text-align:center;
+    border-radius:0 0  3px 3px;
+    padding-bottom:10px;
+}
+.menuCta ul{
+    box-sizing: border-box;
+    margin:0;padding:0;
+}
+.menuCta ul li{
+    display: inline-block;
+    height:40px;
+    width:100%;
+    margin:0;
+    border-radius:3px;
+}
+.cta1{
+    font-size: 12px;
+    line-height:40px;
+    font-weight:300;
+    text-align: center;
+    background-color:rgba(255,255,255,1);
+    border-radius:3px;
+}
+.cta2{
+    font-size: 12px;
+    line-height:40px;
+    font-weight:300;
+    text-align: center;
+    background-color:rgba(177,177,177,0.5);
+    border-radius:3px;
+}
+.cta1:hover{
+    background-color:rgba(255,255,255,0);
+}
+.cta2:hover{
+    background-color:rgba(177,177,177,1);
+}
+.ctaTop::after{
+    content:"↑";
+    margin-left:60px;
+}
+.ctaTop::before{
+    content:"↑";
+    margin-right:60px;
+}
+.para{
+    font-size: 12px;
+    line-height:16px;
+    text-align: justify;
+    letter-spacing:0.7pt;
+    color:#666666;
+    margin:10px 20px;
+    padding-top:10px;
+}
+h1{
+    margin:0;padding:0;
+}
+input{
+    color:#666;
+    width: 80%;
+    margin:5px 0;
+    padding: 5px;
+    border:0;
+    border-radius:3px;
+}
+.toolbox{
+    font-size: 12px;
+    padding:5px 20px;
+    margin:10px;
+    background-color:#fff;
+    border:1px solid #fff;
+    border-radius:3px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .4);
+}
+.menuOpen ul{
+    box-sizing: border-box;
+    text-align:center;
+    margin:0;padding:0;
+}
+.menuOpen ul li{
+    display: inline-block;
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    border:2px solid grey;
+    background: #fff;
+    margin:0 15px 0 0;
+}
+.addSite{
+    position: absolute;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    width:300px;
+    height:300px;
+    text-align: center;
+    border-radius: 3px
+}
+.titre{
+    display: block;
+    height:40px;
+    background-color:#fff;
+    border-radius: 3px 3px 0 0;
+    font-size:30px;
+    text-align: left;
+    padding-left:30px;
+}
+.close{
+    float: right;
+    height:30px;
+    font-size:20px;
+    line-height:30px;
+    margin:2px 10px;
+}
+.left{
+    float:left;
+}
+.choixLogos{
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    left:300px;
+    top:0;
+    background-color: #848484;
+    width:300px;
+    height:400px;
+    padding:10px 20px;
+}
+.logoCentral{
+    width:100px;
+    height:100px;
+    margin:20px;
+    background: red;
+}
+.choixLogos{
+    height:300px;
+}
+.choixLogos img{
+    margin:5px 6px;
+}
+}
+
