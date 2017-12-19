@@ -19,19 +19,42 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <div class="fbapi">
+       <div class="titre">
+           <h1>FaceBook API</h1>
+       </div>
+       <p class="para">In order for automatic logo finger to work you'll to supply your own App ID/Secret for the Facebook API. Learn more.</p>
+       <input id="appId" type="text" placeholder="Facebook App ID">
+       <input id="appSecret" type="text" placeholder="Facebook App Secret">
+       <button id="save">Save</button>
+    </div>
+    <div class="addSite">
+       <div class="titre">
+           <h1>Add a Site</h1>
+       </div>
+       <img id="logo" style="width:100px;height:100px;background: red;" />
+       <input id="nomSite" type="text" placeholder="Nom du site">
+       <input id="urlSite" type="text" placeholder="URL du site">
+       <button id="ajouter">Add to Collection</button>
+    </div>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
+    <div class="choixLogos"></div>
+
+
+        <!-- Add your site or application content here -->
+        
+
+
+    <!-- script src="js/vendor/modernizr-3.5.0.min.js"></script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <!-- script src="js/plugins.js"></script -->
+    <script src="js/main.js"></script>
+    <!-- script src="js/site.js"></script -->
+
+
+
+
+
     </body>
 </html>
