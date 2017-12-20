@@ -1,82 +1,83 @@
 <!doctype html>
 <html class="no-js" lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>BUDDASH</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>BUDDASH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <!--link rel="stylesheet" href="css/main.css"-->
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/menu.css">
-    </head>
-    <body style="background-image:url(images/_menuAll.png);background-size:130%; background-color: red;">
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--link rel="stylesheet" href="css/main.css"-->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/menu.css">
+  </head>
+<body>
+  <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
-    <div class="menuCta">
-      <ul>
-        <li class="cta1 ctaTop">Thèmes</li>
-        <li class="cta2">FaceBook API</li>
-        <li class="cta1">Import</li>
-        <li class="cta2">Notifications</li>
-        <li class="cta1">Share</li>
-      </ul>
+  <div class="menuCta">
+    <ul>
+      <li id="themes" class="cta">Thèmes</li>
+      <li id="facebookaip" class="cta">FaceBook API</li>
+      <li id="import" class="cta">Import</li>
+      <li id="notifications" class="cta">Notifications</li>
+      <li id="share" class="cta">Share</li>
+    </ul>
+  </div>
+
+  <div class="menuOpen">
+    <p class="para">In order for automatic logo finger to work you'll to supply your own App ID/Secret for the Facebook API. <u>Learn more</u>.</p>
+    <input id="appId" type="text" placeholder="Facebook App ID">
+    <input id="appSecret" type="text" placeholder="Facebook App Secret">
+    <button id="save" class="toolbox">Save</button>
+  </div>
+
+  <div class="menuOpen">
+    <p class="para">Select a theme in the list below to change the color scheme</u>.</p>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div class="menuOpen addSite">
+    <div class="titre">
+      <h1 class="left">Add a Site</h1><span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
     </div>
+    <div class="logoCentral left"><img id="logo" class="left"/></div>
+    <span class="ctaGliss left">
+      <button id="moreImages" class="toolboxS">More images</button><br>
+      <button id="setUrl" class="toolboxS">Set URL</button>
+    </span>
+      <input id="nomSite" type="text" placeholder="Nom du site">
+      <input id="urlSite" type="text" placeholder="URL du site">
+      <button id="ajouter" class="toolbox">Add to Collection</button>
+  </div>
 
-    <div class="menuOpen">
-       <p class="para">In order for automatic logo finger to work you'll to supply your own App ID/Secret for the Facebook API. <u>Learn more</u>.</p>
-       <input id="appId" type="text" placeholder="Facebook App ID">
-       <input id="appSecret" type="text" placeholder="Facebook App Secret">
-       <button id="save" class="toolbox">Save</button>
-    </div>
-
-    <div class="menuOpen">
-      <p class="para">Select a theme in the list below to change the color scheme</u>.</p>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-
-    <div class="menuOpen addSite">
-       <div class="titre">
-           <h1 class="left">Add a Site</h1><span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
-       </div>
-       <img id="logo" class="logoCentral"/>
-       <input id="nomSite" type="text" placeholder="Nom du site">
-       <input id="urlSite" type="text" placeholder="URL du site">
-       <button id="ajouter" class="toolbox">Add to Collection</button>
-    </div>
-
-    <div class="choixLogos"></div>
+  <div class="choixLogos"></div>
 
     
-        <!-- Add your site or application content here -->
+  <!-- Add your site or application content here -->
         
 
 
-    <!-- script src="js/vendor/modernizr-3.5.0.min.js"></script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <!-- script src="js/plugins.js"></script -->
-    <script src="js/main.js"></script>
-    <!-- script src="js/site.js"></script -->
-
-
-
-
+  <!-- script src="js/vendor/modernizr-3.5.0.min.js"></script -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+  <!-- script src="js/plugins.js"></script -->
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+  <!-- script src="js/site.js"></script -->
 
     </body>
 </html>
