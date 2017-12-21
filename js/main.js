@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 
 
+
 	// ouvrir le menu principal avec bouddha
 	$(".bouddha").on("click",function(){
 		$(".bouddha").toggleClass("open");
@@ -83,3 +84,4 @@ $(document).ready(function(){
 });
 
 		
+
