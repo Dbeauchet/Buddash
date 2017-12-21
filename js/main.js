@@ -164,18 +164,30 @@ $(document).ready(function(){
 
 	// AJOUTER UNE DIV  AU BANDEAU
 
+	var ligne = "";
+
+	$(".contenair2").click(function(a){
+ 		console.log(a.target.id);
+ 		if(a.target.id.indexOf("ligne-") != -1){
+ 		console.log(a.target.id); 	
+ 		ligne = a.target.id;
+ 		console.log(a.target.id);
+ 		}
+ 		console.log(a.target.id);
+ 		ligne = a.target.id;
+ 	});
+
+
+
 	$('#ajouter').on('click',function(){
-		console.log('essai');
+		console.log(ligne);
 		// $('.ajout.a').css("background-color","red");
-		$('.ajout.a').before('<div class="newDiv"><div class="imgSite" id="timestamp"></div><span class="titreSite id="timestamp">momo</span "></div>');
+		$('#'+ligne).before('<div class="newDiv"><div class="imgSite" id="timestamp"></div><span class="titreSite id="timestamp">momo</span "></div>');
 	})
 
 
 
-
-
-
-
+ 	
 
 
 
