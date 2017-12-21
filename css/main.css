@@ -1,10 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
-.green .fonce {
+.green .fonce, .green.corp {
   background-color: #003300; }
 
-.green .moyen, .green.moyen {
+.green .moyen {
   background-color: #004d00; }
 
 .green .clair {
@@ -13,10 +13,10 @@
 .green .txtclair {
   color: #008000; }
 
-.red .fonce {
+.red .fonce, .red.corp {
   background-color: #330000; }
 
-.red .moyen, .red.moyen {
+.red .moyen {
   background-color: #800000; }
 
 .red .clair {
@@ -25,10 +25,10 @@
 .red .txtclair {
   color: #e60000; }
 
-.blue .fonce {
+.blue .fonce, .blue.corp {
   background-color: #00124d; }
 
-.blue .moyen, .blue.moyen {
+.blue .moyen {
   background-color: #002499; }
 
 .blue .clair {
@@ -37,10 +37,10 @@
 .blue .txtclair {
   color: #1a4fff; }
 
-.white .fonce {
+.white .fonce, .white.corp {
   background-color: #404040; }
 
-.white .moyen, .white.moyen {
+.white .moyen{
   background-color: #ffffff; }
 
 .white .clair {
@@ -49,10 +49,10 @@
 .white .txtclair {
   color: #999999; }
 
-.pink .fonce {
+.pink .fonce, .pink.corp {
   background-color: #4d004d; }
 
-.pink .moyen, .pink.moyen {
+.pink .moyen {
   background-color: #990099; }
 
 .pink .clair {
@@ -61,10 +61,10 @@
 .pink .txtclair {
   color: #ff00ff; }
 
-.brown .fonce {
+.brown .fonce, .brown.corp{
   background-color: #392714; }
 
-.brown .moyen, .brown.moyen {
+.brown .moyen {
   background-color: #714e28; }
 
 .brown .clair {
@@ -76,7 +76,6 @@
 body {
   font-size: 0;
   font-family: 'Roboto',arial;
-  background-color: black;
   position: relative;
   height: 100vh;
   box-sizing: border-box;
@@ -90,6 +89,7 @@ body {
 	background-color: black;
 	opacity:0;
 	pointer-events: none;
+  
 }
 .hidde{
 	pointer-events: auto;
@@ -112,10 +112,13 @@ h1{
     float:left;
 }
 .bouddha {
+  position: relative;
   margin-left: 43%;
   margin-top: 41vh;
   width: 50px;
-  height: 80x; }
+  height: 80px;
+  z-index: 9999;
+}
 
 .spacer {
   height: 27vh; }
@@ -134,14 +137,15 @@ p {
   display: inline-block;
   box-sizing: border-box;
   width: 10%;
-  height: 90vh; }
+  height: 82vh; 
+}
 
 .contenair2 {
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
   width: 80%;
-  height: 90vh; }
+  height: 82vh; }
 
 
 .box {
@@ -190,7 +194,7 @@ p {
   margin-bottom: -10px; 
   transition:1s;  
 }
-.pbl:hover{
+.box:hover .pbl:hover{
   opacity: 1;
 }
 
@@ -211,7 +215,7 @@ p {
   margin-bottom: -6px;
   transition:1s;
 }
-.pen:hover{
+.box:hover .pen:hover{
   opacity: 1;
 }
 
@@ -224,10 +228,10 @@ p {
     margin-top: 25px; }
 
 .bas {
-    height: 15vh;
-    margin-top: 0px; }
-
-
+    height: 166px;
+    margin-top: 0px; 
+    position: relative;
+  }
 
 .ajout {
     line-height: 80px;
@@ -245,8 +249,8 @@ p {
     transition: 0.5s; }
 
 .d {
-    margin-top: 2vh;
-    margin-left: 40px; 
+    margin-top: 40px;
+    margin-left: 75px; 
 }
 
 .bas:hover .d{
@@ -259,10 +263,11 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     width: 20px;
-    height: 20px;
-    margin-bottom: 7px; 
-    opacity:1;
-    margin-bottom: 5px;
+    height: 25px; 
+    opacity:0;
+    position: absolute;
+      top: 30px;
+      left: 60px;
 }
 .penbas{
     background-image: url("../img/pen_black_64.png");
@@ -270,9 +275,27 @@ p {
     background-size: cover;
     width: 20px;
     height: 20px;
-    margin-bottom: 7px; 
+    opacity:0;
+    position: absolute;
+      top: 85px;
+      left: 60px;
+}
+.ligne:hover .pblbas{
+    opacity:0.5;
+    left: 30px;
+    transition: 1s;
+
+}
+.ligne:hover .penbas {
+    opacity:0.5;
+    left: 30px;
+    transition: 1s;
+}
+.ligne:hover .pblbas:hover{
     opacity:1;
-    margin-bottom: 5px;
+}
+.ligne:hover .penbas:hover{
+    opacity:1;
 }
 
 
