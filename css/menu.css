@@ -1,51 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
-body{
-    font-family: 'Roboto';
-    color:#333;
-    font-size:13px;
-    height:900px;
-    background-color: red;
-}
-.tempBG{
-   background-image:url(../images/_menuAll.png);
-   background-size:130%; 
-   background-color: red;
-}
-h1{
-    font-family: 'Roboto';
-    font-size:20px;
-    line-height:40px;
-    font-weight:100;
-}
+.green{background-color: green;}
+.red{background-color: red;}
+.blue{background-color: blue;}
+.white{background-color: white;}
+.pink{background-color: pink;}
+.brown{background-color: brown;}
+
 .left{
     float:left;
 }
-h1{
-    margin:0;padding:0;
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+    transition: all 0.5s;
 }
 .menuCta{
     position: relative;
     box-sizing: border-box;
-    left:50px;
-    top:40vh;
+    left:-1000px;
+    top:4vh;
     width: 240px;
     margin:0;
-    background-color: #dddddd;
     text-align:center;
     border-radius:3px;
-}
-.menuOpen{
-    position: relative;
-    box-sizing: border-box;
-    left:50px;
-    top:40vh;
-    width: 240px;
-    margin:0;
-    background-color:rgb(218,219,218);
-    text-align:center;
-    border-radius:0 0  3px 3px;
-    padding-bottom:10px;
 }
 .menuCta ul{
     box-sizing: border-box;
@@ -53,7 +33,6 @@ h1{
 }
 .menuCta ul li{
     cursor:pointer;
-    height:40px;
     width:100%;
     margin:0;
     border-radius:3px;
@@ -62,55 +41,56 @@ h1{
     line-height:40px;
     font-weight:300;
     text-align: center;
-    background-color:rgba(255,255,255,.5);
     border-radius:3px;
 }
-.menuCta ul li:nth-child(odd){
+.menuCta .cta{
+    background-color:rgba(200,200,200,1);
+}
+.menuCta .cta:nth-child(1){
+    background-color:rgba(255,255,255,1);
+}
+.menuCta .cta:nth-child(5){
+    background-color:rgba(255,255,255,1);
+}
+.menuCta .cta:nth-child(7){
     background-color:rgba(255,255,255,1);
 }
 .cta::before{
     position:relative;
+    display:inline-block;
     top:0px;
     left:-200px;
-    content:"↑";
+    content:"↓";
     transition: all 0.5s;
-}
-.cta:hover::before{
-    position:relative;
-    top:0;
-    left:-40px;
-    cursor:pointer;
-    content:"↑";
 }
 .cta::after{
     position:relative;
+    display:inline-block;
     top:0;
     left:200px;
-    content:"↑";
+    content:"↓";
     transition: all 0.5s;
 }
+
+.cta:hover::before{
+    top:0;
+    left:-40px;
+    content:"↓";
+}
+.cta.openbox::before {
+    top:0;
+    left:-40px;
+    content:"↓";
+}
 .cta:hover::after{
-    position:relative;
     top:0;
     left:40px;
-    content:"↑";
+    content:"↓";
 }
-.para{
-    font-size: 12px;
-    line-height:16px;
-    text-align: justify;
-    letter-spacing:0.7pt;
-    color:#666666;
-    margin:10px 20px;
-    padding-top:10px;
-}
-input{
-    color:#666;
-    width: 80%;
-    margin:5px 0;
-    padding: 5px;
-    border:0;
-    border-radius:3px;
+.cta.openbox::after {
+    top:0;
+    left:40px;
+    content:"↓";
 }
 .toolbox{
     font-size: 12px;
@@ -121,6 +101,18 @@ input{
     border-radius:3px;
     box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .4);
 }
+.toolbox:hover{
+    position:relative;
+    cursor: pointer;
+    top:1px;
+    font-size: 12px;
+    padding:8px 20px;
+    margin:10px;
+    background-color:#fff;
+    border:1px solid #fff;
+    border-radius:3px;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, .4);
+}
 .toolboxS{
     font-size: 12px;
     padding:5px 10px;
@@ -130,33 +122,46 @@ input{
     border-radius:3px;
     box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .4);
 }
-.ctaGliss{
-    margin-top:25px;
-    text-align:left;
+.boxMenu{
+    position: relative;
+    box-sizing: border-box;
+    width: 240px;
+    margin:0;
+    background-color:rgb(218,219,218);
+    text-align:center;
+    border-radius:0 0 3px 3px;
+    padding:20px;
 }
-.menuOpen ul{
+#boxThemes ul{
     box-sizing: border-box;
     text-align:center;
     margin:0;padding:0;
 }
-.menuOpen ul li{
+#boxThemes ul li{
     display: inline-block;
     width:10px;
     height:10px;
     border-radius:10px;
     border:2px solid grey;
-    background: #fff;
-    margin:0 15px 0 0;
+    margin:10px 15px 0 0;
 }
-.addSite{
-    position: absolute;
-    top:0;
-    left:0;
-    box-sizing: border-box;
-    width:300px;
-    height:300px;
-    text-align: center;
-    border-radius: 3px
+.para{
+    font-size: 12px;
+    line-height:16px;
+    text-align: justify;
+    letter-spacing:0.7pt;
+    color:#666666;
+    margin:0;
+    width:100%;
+    padding:0;
+}
+input{
+    color:#666;
+    width: 80%;
+    margin:5px 0;
+    padding: 10px;
+    border:0;
+    border-radius:3px;
 }
 .titre{
     display: block;
@@ -174,28 +179,15 @@ input{
     line-height:30px;
     margin:2px 10px;
 }
-.choixLogos{
-    position: absolute;
-    overflow: hidden;
-    box-sizing: border-box;
-    left:300px;
-    top:0;
-    background-color: #848484;
-    width:300px;
-    height:400px;
-    padding:10px 20px;
+.repli{
+    transition: all 0.5s;
+    transform: scale(1,0);
 }
-.logoCentral{
-    width:80px;
-    height:80px;
-    margin:30px 5px 10px 110px;
-    border-radius: 3px;
-    background-color: #ffffff;
-    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .4);
+.turn:before{
+    transition: all 0.5s;
+    transform: rotate(180deg);
 }
-.choixLogos{
-    height:300px;
-}
-.choixLogos img{
-    margin:5px 6px;
+.turn:after{
+    transition: all 0.5s;
+    transform: rotate(-180deg);
 }
