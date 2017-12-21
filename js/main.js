@@ -1,140 +1,85 @@
-//ordre, date de dernière consultation
-
-
-/// Afficher site AD | EDIT
-function ajoutmodifsite(action,nom,url,image,list){
-	
-};
-/// Action sur le Add to Collection
-function ajoutsite(nom,url,image,list){
-	
-};
-
-///// Lightbox ////////////////////////
-/*function OpenLightBox{
- 	$('#plusSite').click(function(){
-		$('#LighBox').css( 'display','inline-block');
- 	};
-}
-function CloseLightBox{
-	$('#croix').click(function(){
-		$('#LighBox').css( 'display','none');
- 	};
-}
-
-///// Memu API ////////////////////////
-function OpenApi{
- 	$('#tete').click(function(){
-		$('#ApiMenu').css( 'display','inline-block');
- 	};
-}
-function CloseApi{
-	$('#tete').click(function(){
-		$('#ApiMenu').css( 'display','none');
- 	};
-}
-
-
-//// Action enregistrement Facebook API query, AppId, AppSecret à stoker dans le LOCAL STORAGE
-var AppId='437660773298889';
-var AppSecret='371758459896094a60e6c3b878aa947a';
-	function save(){
-		
-	};
-
-*/
-//recuperer App ID et App Secret
-
-var valeurId="";
-var valeurSecret="";
-       
-    $("#save").click(function(){
-        var valeurId = $("#appId").val();
-    	console.log(valeurId);
-
-    	var valeurSecret = $("#appSecret").val();
-    	console.log(valeurSecret);
-
-	    localStorage.setItem("valeurId", valeurId);
-	    localStorage.setItem("valeurSecret", valeurSecret);
-	    //console.log(valeurId +", "+ valeurSecret);
-	    //getPictures();
-    });
-
-//// Création du tableau de logos à rendre invisible Add a Site ////////////////////
-	
-/*	$("#ajouter").click( function(){
-		var url = $("#urlSite").val();
-		localStorage.setItem("urlSite", url);
-	});
-*/
+$(document).ready(function(){
 
 
 
-	$("#nomSite").focusout(ajouterPicture)
-	function ajouterPicture(){
-		var query = $("#nomSite").val();
-		console.log('query='+ query);
-		localStorage.setItem("nomSite", query);
-		getPictures();
-	}
-
-
-
-function getPictures(query, AppId, AppSecret){
-	 query=localStorage.getItem('nomSite');
-	//var AppId='437660773298889';
-	AppId=localStorage.getItem('valeurId');
-	console.log(valeurId);
-	//var AppSecret='371758459896094a60e6c3b878aa947a';// 
-	AppSecret = localStorage.getItem('valeurSecret');
-	// remplacer lemonde par '+query+''
-	$.getJSON('https://graph.facebook.com/search?q='+query+'&type=page&access_token='+AppId+'|'+AppSecret+'',function(monJSON){
-		var length = monJSON.data.length;
-		console.log(monJSON.data);
-		for(var i=0;i<15;i++){
-			var pageid = monJSON.data[i].id;
-			$('.choixLogos').append('<img id="page-'+i+'" src="https://graph.facebook.com/'+pageid+'/picture/?width=50">');
+	// ouvrir le menu principal avec bouddha
+	$(".bouddha").on("click",function(){
+		$(".bouddha").toggleClass("open");
+		if ($(".bouddha").hasClass("open") == true){
+			$(".contenair1").animate({"width":"19%"});
+			$(".bouddha").animate({"margin-top":"10vh"});
+ 			$(".menuCta").animate({"left": "72"},);
+		}else{
+			$(".menuCta").animate({"left": "-1000"});
+			$(".contenair1").animate({"width":"10%"});
+			$(".bouddha").animate({"margin-top":"41vh"});
+			
 		}
-		// création du logo central qui doit apparaitre en quittant le focus sur champ nom
-		var pageid = monJSON.data[0].id;
-		console.log(monJSON.data[0]);
-		$('#logo').attr('src',"https://graph.facebook.com/"+pageid+"/picture/?width=30");
 	});
-}
-
- $(".choixLogos").click(function(a){
- 	if(a.target.id.indexOf("page-") != -1){
- 	console.log(a.target.id); 	
- 	var urlPict=a.target.src;
- 	console.log(a.target.src);
-	$('#logo').attr('src',urlPict);
- 	}
- });
-
-//// Déclenche la création du tableau de logos ///////////
 
 
-//// Action More Images : rendre le tableau de logo visible avec glissement ///////////
-function moreImages(){
- 	$('#btn').click(function(){
- 		$('#divMoreImages').css( 'display','inline-block');
- 	});
-}
+	//ouvrir add a site
+	$(".ajout").on("click",function(){
+		$(".addSite").animate({"top":"-45","left":"5"});
+		$(".choixLogos").animate({"top":"-45","left":"5"});
+		$(".general").animate({"margin-top":"100","margin-left":"100"});
+		$("#urlSiteBis").animate({"top":"67","left":"5"});
+		$(".invisible").toggleClass("hidde");
+	});
 
-//// Action set URL : enregistre l'URL  ////////////////////////////
-function setLogo(){
- 	$('#btnSet').click(function(){
- 		$('#setImages').css( 'display','inline-block');
- 	});
-}
-
-//// Action themes
-	function couleur(){
-       // changer l'appel src du css dans le header
-	};
-
-
+	//fermer add a site avec la croix
+	$(".cross").on("click",function(){
+		if($(".cross").hasClass("openchoixlogo")){
+			$(".choixLogos").animate({"left":"5"});
+			$("#urlSiteBis").animate({"left":"5"});
+     		$("#moreImages").text("More images");
+	 		$(".addSite").animate({"top":"-1000","left":"-1000"});
+	 		$(".choixLogos").animate({"top":"-1000","left":"-1000"});
+	 		$("#urlSiteBis").animate({"top":"-1000","left":"-1000"});
+	 		$(".general").animate({"margin-top":"0","margin-left":"0"});
+	 		$(".invisible").removeClass("hidde");
+	 		$("#setUrl").removeClass("openUrl");
+	 	}else{
+	 		$(".addSite").animate({"top":"-1000","left":"-1000"});
+	 		$(".choixLogos").animate({"top":"-1000","left":"-1000"});
+	 		$("#urlSiteBis").animate({"top":"-1000","left":"-1000"});
+	 		$(".general").animate({"margin-top":"0","margin-left":"0"});
+	 		$(".invisible").removeClass("hidde");
+	 		$("#setUrl").removeClass("openUrl");
+	 	}
+	});
 
 
 
+
+
+
+	//ouvrir fermer choix logo
+     $("#moreImages").on("click",function(){
+     	$("#moreImages").toggleClass("openchoixlogo");
+     	if($("#moreImages").hasClass("openchoixlogo")){
+     		$(".choixLogos").animate({"left":"305"});
+     		$("#moreImages").text("less images");
+     	}else{
+     		$(".choixLogos").animate({"left":"5"});
+     		$("#moreImages").text("More images");
+     	}
+     });
+     //ouvrir fermer set url
+     $("#setUrl").on("click",function(){
+     	$("#setUrl").toggleClass("openUrl");
+     	if($("#setUrl").hasClass("openUrl")){
+     		$("#moreImages").removeClass("openchoixlogo");
+     		$(".choixLogos").animate({"left":"5"});
+     		$("#moreImages").text("More images");
+     		$("#urlSiteBis").animate({"left":"315"});
+     	}else{
+     		$("#urlSiteBis").animate({"left":"5"});
+     		
+     	}
+     });
+
+
+});
+
+		
