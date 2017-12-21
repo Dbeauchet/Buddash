@@ -152,6 +152,26 @@ $(document).ready(function(){
     });
 
 
+	 //FERME eT REMET LA PAGE A L'OUVERTURE de DEPART
+	$('#ajouter').on("click",function(){
+		$(".choixLogos").animate({"top":"-1000","left":"-1000"});
+		$(".addSite").animate({"top":"-1000","left":"-1000"});
+		$(".invisible").removeClass("hidde");
+		$("#urlSiteBis").animate({"top":"-1000","left":"-1000"});
+		$(".general").animate({"margin-top":"0","margin-left":"0"});
+	});
+
+
+	// AJOUTER UNE DIV  AU BANDEAU
+
+	$('#ajouter').on('click',function(){
+		console.log('essai');
+		// $('.ajout.a').css("background-color","red");
+		$('.ajout.a').before('<div class="newDiv"><div class="imgSite" id="timestamp"></div><span class="titreSite id="timestamp">momo</span "></div>');
+	})
+
+
+
 
 
 
