@@ -22,6 +22,8 @@ $(document).ready(function(){
 		var query = $("#nomSite").val();
 		console.log('query='+ query);
 		localStorage.setItem("nomSite", query);
+		$("#moreImages").addClass("opacity1");
+		$("#setUrl").addClass("opacity1");
 		getPictures();
 	}
 
@@ -60,48 +62,6 @@ $(document).ready(function(){
  		}
  	});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	// ouvrir le menu principal avec bouddha
 	$(".bouddha").on("click",function(){
 		$(".bouddha").toggleClass("open");
@@ -109,10 +69,12 @@ $(document).ready(function(){
 			$(".contenair1").animate({"width":"19%"});
 			$(".bouddha").animate({"margin-top":"10vh"});
  			$(".menuCta").animate({"left": "72"},);
+ 			$(".invisible").toggleClass("hidde");
 		}else{
 			$(".menuCta").animate({"left": "-1000"});
 			$(".contenair1").animate({"width":"10%"});
 			$(".bouddha").animate({"margin-top":"41vh"});
+			$(".invisible").removeClass("hidde");
 			
 		}
 	});
@@ -139,6 +101,10 @@ $(document).ready(function(){
 	 		$(".general").animate({"margin-top":"0","margin-left":"0"});
 	 		$(".invisible").removeClass("hidde");
 	 		$("#setUrl").removeClass("openUrl");
+	 		$('#logo').attr("src","");
+	 		$('.choixLogos img').attr("src","");
+	 		$("#moreImages").removeClass("opacity1");
+			$("#setUrl").removeClass("opacity1");
 	 	}else{
 	 		$(".addSite").animate({"top":"-1000","left":"-1000"});
 	 		$(".choixLogos").animate({"top":"-1000","left":"-1000"});
@@ -146,6 +112,12 @@ $(document).ready(function(){
 	 		$(".general").animate({"margin-top":"0","margin-left":"0"});
 	 		$(".invisible").removeClass("hidde");
 	 		$("#setUrl").removeClass("openUrl");
+	 		$("#nomSite").val("");
+	 		$('#logo').attr("src","");
+	 		$('.choixLogos img').attr("src","");
+	 		$("#moreImages").removeClass("opacity1");
+			$("#setUrl").removeClass("opacity1");
+
 	 	}
 	});
 
@@ -166,7 +138,7 @@ $(document).ready(function(){
      	}
      });
      //ouvrir fermer set url
-     $("#setUrl").on("click",function(){
+    $("#setUrl").on("click",function(){
      	$("#setUrl").toggleClass("openUrl");
      	if($("#setUrl").hasClass("openUrl")){
      		$("#moreImages").removeClass("openchoixlogo");
@@ -177,7 +149,16 @@ $(document).ready(function(){
      		$("#urlSiteBis").animate({"left":"5"});
      		
      	}
-     });
+    });
+
+
+
+
+
+
+
+
+
 
 
 });
