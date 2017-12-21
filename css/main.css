@@ -223,7 +223,7 @@ p {
 .ligne {
     box-sizing: border-box;
     width: 100%;
-    height: 80px;
+    height: 120px;;
     line-height: 50px;
     margin-top: 25px; }
 
@@ -401,4 +401,39 @@ input{
 .choixLogos img{
     margin:5px 6px;
     width: 50px;
+}
+
+
+/*Nouvelle div*/
+.newDiv{
+  vertical-align: top;
+  font-size:25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color:rgb(20, 170, 53);
+  display:inline-block;
+  margin:0 25px 0 0 ;
+
+}
+.titreSite{padding:0;
+  display:block;
+  width:80px;
+ line-height:15px; 
+ margin:0 !important;
+  text-align: center;
+  font-size:12px;
+  color:white;
+}
+
+.imgSite{
+  vertical-align: top;
+  font-size:25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  border:1px solid black;
+  display:block;
+  margin:0 25px 0 0 ;
+
 }
