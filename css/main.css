@@ -79,6 +79,7 @@ body {
   background-color: black;
   position: relative;
   height: 100vh;
+  box-sizing: border-box;
 }
 .invisible{
 	position: absolute;
@@ -142,6 +143,7 @@ p {
   width: 80%;
   height: 90vh; }
 
+
 .box {
   box-sizing: border-box;
   vertical-align: middle;
@@ -155,12 +157,20 @@ p {
 
 .text {
   width: 78px;
-  height: 42px; }
+  height: 42px; 
+  line-height:80px;
+}
+.box:hover .text{
+  line-height:50px;
+  transition: 1s;
+}
 
 .ico {
   box-sizing: border-box;
   width: 78px;
-  height: 34px; }
+  height: 34px; 
+}
+
 
 .pbl {
   background-image: url("../img/dash_white_64.png");
@@ -169,7 +179,20 @@ p {
   background-size:18px;
   display: inline-block;
   width: 24px;
-  height: 28px; }
+  height: 28px; 
+  opacity:0;
+  line-height:80px; 
+  margin-bottom: 5px;
+}
+
+.box:hover .pbl{
+  opacity: 0.4;
+  margin-bottom: -10px; 
+  transition:1s;  
+}
+.pbl:hover{
+  opacity: 1;
+}
 
 .pen {
   background-image: url("../img/pen_black_64.png");
@@ -178,37 +201,79 @@ p {
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-bottom: 7px; }
+  margin-bottom: 7px; 
+  opacity:0;
+  margin-bottom: 5px;
+}
+
+.box:hover .pen{
+  opacity: 0.4;
+  margin-bottom: -6px;
+  transition:1s;
+}
+.pen:hover{
+  opacity: 1;
+}
+
 
 .ligne {
-  box-sizing: border-box;
-  width: 100%;
-  height: 80px;
-  line-height: 50px;
-  margin-top: 25px; }
+    box-sizing: border-box;
+    width: 100%;
+    height: 80px;
+    line-height: 50px;
+    margin-top: 25px; }
 
 .bas {
-  height: 10vh;
-  margin-top: 0px; }
+    height: 15vh;
+    margin-top: 0px; }
+
+
 
 .ajout {
-  line-height: 80px;
-  font-weight: bold;
-  font-size: 40px;
-  vertical-align: middle;
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-  width: 80px;
-  height: 80px; }
+    line-height: 80px;
+    font-weight: bold;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px; }
 
 .ajout:hover {
-  transform: scale(0.8);
-  transition: 0.5s; }
+    transform: scale(0.8);
+    transition: 0.5s; }
 
 .d {
-  margin-top: 1vh;
-  margin-left: 50px; }
+    margin-top: 2vh;
+    margin-left: 40px; 
+}
+
+.bas:hover .d{
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+.pblbas{
+    margin-top: 20px;
+    background-image: url("../img/dash_white_64.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 7px; 
+    opacity:1;
+    margin-bottom: 5px;
+}
+.penbas{
+    background-image: url("../img/pen_black_64.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 7px; 
+    opacity:1;
+    margin-bottom: 5px;
+}
 
 
 /*MENU PRINCIPAL
@@ -304,9 +369,13 @@ input{
        top:-1000px;
        left:-1000px;
 	width: 300px;
-    height:300px;
-    background-color: pink;
+  height:300px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #848484;
+  padding:10px 20px;
 }
 .choixLogos img{
     margin:5px 6px;
+    width: 50px;
 }
