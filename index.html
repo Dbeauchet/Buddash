@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="fr">
     <head>
@@ -11,12 +12,13 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/menu.css">
     </head>
-    <body>
-        <div class="invisible"></div>
+    <body class="brown corp">
+        <div class="invisible"></div>   
         <div class="choixLogos"></div>
         <input id="urlSiteBis" type="text" placeholder="URL...">
-        <div class="menuOpen addSite">
+        <div class="addSite">
             <div class="titre">
                 <h1 class="left">Add a Site</h1><span class="close"><i class=" cross fa fa-times" aria-hidden="true"></i></span>
             </div>
@@ -29,22 +31,40 @@
             <input id="urlSite" type="text" placeholder="URL du site">
             <button id="ajouter" class="toolbox">Add to Collection</button>
         </div>
-      <section class="general brown moyen""> 
+      <section class="general moyen""> 
             <section class="contenair1">
                 <img class="bouddha" src="img/bouddha.png">
                 <div class="menuCta">
                     <ul>
-                        <li id="themes" class="cta clair">Thèmes</li>
-                        <li id="facebookaip " class="cta moyen">FaceBook API</li>
-                        <li id="import" class="cta clair">Import</li>
-                        <li id="notifications" class="cta moyen">Notifications</li>
-                        <li id="share" class="cta clair">Share</li>
+                      <li id="themes" class="cta">Thèmes</li>
+                        <div id="boxThemes" class="boxMenu">
+                          <p class="para">Select a theme in the list below to change the color scheme.</p>
+                          <ul>
+                            <li id="c1" class="green"></li>
+                            <li id="c2" class="red"></li>
+                            <li id="c3" class="blue"></li>
+                            <li id="c4" class="white"></li>
+                            <li id="c5" class="pink"></li>
+                            <li id="c6" class="brown"></li>
+                          </ul>
+                        </div>  
+                      <li id="fbapi" class="cta">FaceBook API</li>
+                        <div id="boxFbApi" class="boxMenu">
+                          <p class="para">In order for automatic logo finger to work you'll to supply your own App ID/Secret for the Facebook API. <u>Learn more</u>.</p>
+                          <input id="appId" type="text" placeholder="Facebook App ID">
+                          <input id="appSecret" type="text" placeholder="Facebook App Secret">
+                          <button id="save" class="toolbox">Save</button>
+                        </div>
+
+                      <li id="import" class="cta">Import</li>
+                      <li id="notifications" class="cta">Notifications</li>
+                      <li id="share" class="cta">Share</li>
                     </ul>
-                </div>
+                  </div>
             </section>
-            <section class="contenair2">
+            <section class="contenair2" >
                 <div class="spacer"></div>
-                    <div class="ligne Day">
+                    <div id="ligne-day" class="ligne Day">
                         <div class="box">
                             <div class="text txtclair">Daily</div>
                             <div class="ico">
@@ -52,9 +72,9 @@
                                 <div class="pen"></div>
                             </div>
                         </div>
-                        <div class="ajout a clair">+</div>
+                        <div class="ajout a clair" id="day">+</div>
                     </div>
-                    <div class="ligne Week">
+                    <div  id="ligne-week" class="ligne Week">
                         <div class="box">
                             <div class="text txtclair">Weekly</div>
                                 <div class="ico">
@@ -62,9 +82,9 @@
                                     <div class="pen"></div>
                              </div>
                         </div>
-                        <div class="ajout b clair">+</div>
+                        <div class="ajout b clair" id="week">+</div>
                     </div>
-                    <div class="ligne Month">
+                    <div id="ligne-month" class="ligne Month">
                         <div class="box">
                             <div class="text txtclair">Monthly</div>
                                 <div class="ico">
@@ -72,13 +92,19 @@
                                     <div class="pen"></div>
                                 </div>
                           </div>
-                        <div class="ajout c clair">+
+                        <div class="ajout c clair" id="month">+
                         </div>
                     </div>
                 
                 </section>
-            <div class="ligne bas fonce">
-                    <div class="ajout d moyen">+</div>
+            <div id="ligne-bas" class="ligne bas fonce">
+                <div class="boxbas">
+                    <div class="icobas">
+                        <div class="pblbas"></div>
+                        <div class="penbas"></div>
+                    </div>
+                    <div class="ajout d moyen" id="bas">+</div>
+                </div>
             </div>
         </section> 
       
@@ -88,7 +114,10 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/menu.js"></script>
 
        
     </body>
 </html>
+
+
