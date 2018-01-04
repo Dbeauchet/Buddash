@@ -230,7 +230,7 @@ $(document).ready(function(){
 		$(".general").animate({"margin-top":"0","margin-left":"0"});
 		$("#nomSite").val("");
 		$("#urlSite").val("");
-		$('#logo').attr("src","");
+		$('#logo').attr("src","img/bouddha_central-gris.png");
 		$('.choixLogos').empty();
 		$("#moreImages").removeClass("opacity1");
 		$(".newDiv").removeClass('lienInactif');
